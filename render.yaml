@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vinay-banking-app
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn Bank.wsgi:application --log-file -
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vinaybankdb
+          property: connectionString
+
+databases:
+  - name: vinaybankdb
+    plan: free
