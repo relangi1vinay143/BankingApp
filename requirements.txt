@@ -1,4 +1,0 @@
-Django==3.2.25
-gunicorn
-pymysql
-cryptography
