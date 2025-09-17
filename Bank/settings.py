@@ -32,7 +32,12 @@ SECRET_KEY = 'django-insecure-q3+ih2hex&*ms!52-l_3_w_uq#)5(#*#2-nf-ymd7%_ry_!od#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['application1.onrender.com']
+ALLOWED_HOSTS = [
+    "bankingapp-eijm.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
