@@ -26,7 +26,7 @@ def Test_Case1(request):
             # ✅ Store employee_id in session
             request.session['employee_id'] = employee.id  
 
-            return render(request, 'application/S2.html', {'employee': employee})
+            return redirect('S2')
 
         except Employee.DoesNotExist:
             messages.error(request, "Invalid User ID or Password")
