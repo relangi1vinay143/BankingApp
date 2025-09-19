@@ -94,7 +94,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files
-MEDIA_URL = "/media/"
+MEDIA_URL = "https://bankingapp-media.onrender.com/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Password validation
