@@ -13,41 +13,50 @@
 <body>
     <div class="Login_Page_Background">
         <div class="login_background">
-            
-            <!-- ✅ Show Django error messages -->
-            {% if messages %}
-              <div>
-                {% for message in messages %}
-                  <div class="alert alert-danger text-center" role="alert">
-                    {{ message }}
-                  </div>
-                {% endfor %}
-              </div>
-            {% endif %}
 
-            <form method="POST" action="{% url 'S2' %}">
+            <form method="POST" action="{% url 'S2' %}" onsubmit="return Test_Case2()">
                 {% csrf_token %}
                 <marquee>Please Enter Account Number (or) Aadhar Number..</marquee>
 
-                <div class="mb-3">
+                <div>
                     <label for="A1">Account Number</label>
-                    <input type="number" name="account_number" id="A1" class="form-control" placeholder="Enter A/C Number..">
+                    <input type="number" name="account_number" id="A1" placeholder="Enter A/C Number.." style="border-radius:3px; margin:5px;">
+                    <span id="ACC_ERR" style="color:red; font-size:12px;"></span>
                 </div>
 
-                <p class="text-center"><tt>(or)</tt></p>
+                <p style="text-align: center;"><tt>(or)</tt></p>
 
-                <div class="mb-3">
+                <div>
                     <label for="A2">Aadhar Number</label>
-                    <input id="A2" type="number" name="aadhar_number" class="form-control" placeholder="Enter Aadhar Number..">
+                    <input id="A2" type="number" name="aadhar_number" placeholder="Enter Aadhar Number.." style="border-radius:3px; margin:5px;">
+                    <span id="AAD_ERR" style="color:red; font-size:12px;"></span>
                 </div>
 
-                <div class="button-group d-flex justify-content-between">
-                    <input type="submit" value="Validate" class="btn btn-outline-primary w-100 mx-1">
-                    <input type="reset" value="RESET" class="btn btn-outline-info w-100 mx-1">
-                    <a href="{% url 'logout' %}" class="btn btn-outline-danger w-100 mx-1">Logout</a>
+                <div style="margin: 10px; text-align:center;">
+                    <input type="submit" value="Validate" class="btn btn-outline-primary" style="width: 25%; margin: 5px;">
+                    <input type="reset" value="RESET" class="btn btn-outline-info" style="width: 25%; margin: 5px;">
+                    <a href="{% url 'logout' %}" class="btn btn-outline-danger" style="width: 25%; margin: 5px;">Logout</a>
                 </div>
             </form>
         </div>
     </div>
+
+<script>
+function Test_Case2() {
+    var acc_num = document.getElementById("A1").value;
+    var aadhar_num = document.getElementById("A2").value;
+
+    document.getElementById("ACC_ERR").innerHTML = "";
+    document.getElementById("AAD_ERR").innerHTML = "";
+
+    if (acc_num === "" && aadhar_num === "") {
+        document.getElementById("ACC_ERR").innerHTML = "Please enter Account Number";
+        document.getElementById("AAD_ERR").innerHTML = "Or enter Aadhar Number";
+        return false;
+    }
+    return true;
+}
+</script>
+
 </body>
 </html>
