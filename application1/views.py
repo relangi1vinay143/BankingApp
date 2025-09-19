@@ -19,7 +19,7 @@ def Test_Case1(request):
     if request.method == "POST":
         user_id = request.POST.get('username')
         password = request.POST.get('password')
-
+        
         try:
             employee = Employee.objects.get(user_id=user_id, password=password)
 
@@ -40,22 +40,34 @@ def Test_Case2(request):
         acc_num = request.POST.get('account_number')
         aadhar_num = request.POST.get('aadhar_number')
 
-        try:
-            if acc_num:
+        account = None
+
+        # ✅ Check account number
+        if acc_num:
+            try:
                 account = Account.objects.get(account_number=acc_num)
-            elif aadhar_num:
+            except Account.DoesNotExist:
+                return render(request, 'application/S2.html', {
+                    "error_message": "Please enter valid Account Number."
+                })
+
+        # ✅ Check aadhar number
+        elif aadhar_num:
+            try:
                 account = Account.objects.get(aadhar_number=aadhar_num)
-            else:
-                messages.error(request, "Please enter Account Number or Aadhar Number")
-                return render(request, 'application/S2.html')
+            except Account.DoesNotExist:
+                return render(request, 'application/S2.html', {
+                    "error_message": "Please enter valid Aadhar Number."
+                })
 
-            # ✅ Store account_id in session
-            request.session['account_id'] = account.id  
+        else:
+            return render(request, 'application/S2.html', {
+                "error_message": "Please enter Account Number or Aadhar Number."
+            })
 
-            return redirect('S3')
-
-        except Account.DoesNotExist:
-            return render(request, 'application/S2.html',{'error': 'Please enter valid details'})
+        # ✅ Success → store session and redirect
+        request.session['account_id'] = account.id
+        return redirect('S3')
 
     return render(request, 'application/S2.html')
 
