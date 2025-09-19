@@ -1,29 +1,37 @@
 .Login_Page_Background {
-    background-image:url("/static/application/images/A5.png");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-position:center;
+    background-image: url("/static/application/images/A5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     display: flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    width:100%;
-    margin:0;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
+    height: 100vh;
+    width: 100%;
+    margin: 0;
     padding: 0;
-  }
+}
+
 .login_background {
-    background-color: rgba(255, 255, 255, 0.9); /* light transparent white */
-    width: 90%;          /* fit nicely on mobile */
-    max-width: 400px;    /* don’t stretch too much */
-    padding: 20px;       /* good spacing inside */
-    border-radius: 12px; /* rounded corners */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* card effect */
+    background-color: rgba(255, 255, 255, 0.9); /* light transparent box */
+    width: 90%;
+    max-width: 400px;      /* neat on big screen also */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
+/* Form full width inside */
+.login_background form {
+    width: 100%;
+}
+
+/* Labels */
 .login_background label {
     font-weight: bold;
     font-size: 14px;
@@ -31,6 +39,7 @@
     display: block;
 }
 
+/* Inputs */
 .login_background input[type="number"] {
     width: 100%;
     padding: 10px;
@@ -40,12 +49,15 @@
     font-size: 14px;
 }
 
+/* Buttons – all same size */
 .login_background input[type="submit"],
 .login_background input[type="reset"],
 .login_background a.btn {
-    width: 100%;
+    width: 100%;             /* full width */
     padding: 10px;
     margin-top: 10px;
     font-size: 15px;
     border-radius: 6px;
+    text-align: center;
+    display: block;
 }
