@@ -4,16 +4,18 @@ from application1.models import Employee
 from .models import Account
 from django.db.models import Q
 
-def logout_view(request):
-    # Clear all session data
-    request.session.flush()  
+def account_logout(request):
+    print(">>> account_logout called")
+    request.session.pop('account_id', None)   # remove only account_id
+    return redirect('S2')   # go back to account selection page
 
-    # Optional: Show a logout success message
-    from django.contrib import messages
-    messages.success(request, "You have been logged out successfully.")
-
-    # Redirect back to login page
+def employee_logout(request):
+    print(">>> employee_logout called")
+    request.session.flush()   # clear entire session
     return redirect('S1')
+
+
+
     
 def Test_Case1(request):
     if request.method == "POST":
@@ -23,7 +25,7 @@ def Test_Case1(request):
         try:
             employee = Employee.objects.get(user_id=user_id, password=password)
 
-            # ✅ Store employee_id in session
+         
             request.session['employee_id'] = employee.id  
 
             return redirect('S2')
@@ -42,7 +44,7 @@ def Test_Case2(request):
 
         account = None
 
-        # ✅ Check account number
+      
         if acc_num:
             try:
                 account = Account.objects.get(account_number=acc_num)
@@ -51,7 +53,7 @@ def Test_Case2(request):
                     "error_message": "Please enter valid Account Number."
                 })
 
-        # ✅ Check aadhar number
+
         elif aadhar_num:
             try:
                 account = Account.objects.get(aadhar_number=aadhar_num)
@@ -65,7 +67,6 @@ def Test_Case2(request):
                 "error_message": "Please enter Account Number or Aadhar Number."
             })
 
-        # ✅ Success → store session and redirect
         request.session['account_id'] = account.id
         return redirect('S3')
 

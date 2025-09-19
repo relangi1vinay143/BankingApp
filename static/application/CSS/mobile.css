@@ -14,12 +14,12 @@
   }
   .login_background{
     background-color: azure;
-    width: 90%;        /* take almost full width */
-    height: auto;      /* adjust height automatically */
-    margin: 10px;      /* equal margin all sides */
+    width: 90%; 
+    height: auto;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;     /* spacing inside */
+    padding: 15px;
     border-radius: 10px;
 }

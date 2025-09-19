@@ -9,7 +9,7 @@ MEDIA_DIR = BASE_DIR / "media"
 
 # Security
 SECRET_KEY = os.environ.get("SECRET_KEY", "fallback-secret")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = True
 
 # Hosts
 DEFAULT_ALLOWED_HOSTS = ["localhost", "127.0.0.1", "bankingapp-1.onrender.com"]

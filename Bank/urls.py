@@ -26,7 +26,8 @@ urlpatterns = [
     path('t1/', views.Test_Case1, name='S1'),
     path('t2/', views.Test_Case2, name='S2'),
     path('t3/', views.Test_Case3, name='S3'),
-    path('logout/', views.logout_view, name='logout'),
+    path("logout/account/", views.account_logout, name="account_logout"),
+    path("logout/employee/", views.employee_logout, name="employee_logout"),
 ]
 
 if settings.DEBUG:

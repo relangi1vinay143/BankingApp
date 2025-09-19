@@ -1,58 +1,48 @@
-html, body {
-    background-color: aqua;
-    background-size: cover;
-    min-height: 100vh;   /* full screen height */
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    display: block;
-    overflow-x: hidden;  /* prevent cutting */
-}
-
-/* Table styling */
-table {
-    background: white;
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto;   /* spacing from top */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    word-wrap: break-word;
-}
-
-/* Fix the photo column */
-th.photo-col, td.photo-col {
-    width: 120px;
-    text-align: center;
-    vertical-align: top;
-}
-
-/* Profile photo */
-.photo {
-    max-width: 100px;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* ✅ Responsive for mobile */
-@media (max-width: 768px) {
-    table {
-        font-size: 13px;
+.whole {
+      background-color: aqua;
+      margin: 0;
+      padding: 12px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-
-    th, td {
-        padding: 6px;
+    .page-container {
+      max-width: 960px;
+      margin: 18px auto;
+      padding: 12px;
     }
-
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .details-table th, .details-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .details-table thead th {
+      text-align: center;
+      background: #f8f9fa;
+      padding: 12px;
+    }
     .photo {
-        max-width: 80px;
-        max-height: 120px;
+      max-width: 140px;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto;
     }
-}
+    .logout-btn {
+      margin-top: 12px;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .actions-row {
+      text-align: center;
+      padding: 12px;
+    }

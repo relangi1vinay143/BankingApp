@@ -17,14 +17,13 @@
 .login_background {
     background-color: azure;
     width: 90%;
-    max-width: 400px;   /* keeps it neat */
+    max-width: 400px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-align: center;
 }
 
-/* Make all buttons equal size */
 .button-group {
     display: flex;
     gap: 10px;
@@ -35,9 +34,9 @@
 .button-group input[type="submit"],
 .button-group input[type="reset"],
 .button-group a.btn {
-    flex: 1;                 /* all equal width */
-    min-width: 0;            /* remove Bootstrap’s min size */
+    flex: 1;                
+    min-width: 0;    
     text-align: center;
     font-size: 14px;
-    padding: 8px 0;          /* same height */
+    padding: 8px 0;   
 }
