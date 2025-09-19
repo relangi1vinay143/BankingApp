@@ -12,14 +12,40 @@
     margin:0;
     padding: 0;
   }
-  .login_background{
-    background-color: azure;
-    width: 90%;        /* take almost full width */
-    height: auto;      /* adjust height automatically */
-    margin: 10px;      /* equal margin all sides */
+.login_background {
+    background-color: rgba(255, 255, 255, 0.9); /* light transparent white */
+    width: 90%;          /* fit nicely on mobile */
+    max-width: 400px;    /* don’t stretch too much */
+    padding: 20px;       /* good spacing inside */
+    border-radius: 12px; /* rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* card effect */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 15px;     /* spacing inside */
-    border-radius: 10px;
+}
+
+.login_background label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login_background input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login_background input[type="submit"],
+.login_background input[type="reset"],
+.login_background a.btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 6px;
 }
