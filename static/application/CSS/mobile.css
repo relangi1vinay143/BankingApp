@@ -1,5 +1,14 @@
-.Login_Page_Background
-{
+.login_background{
+    background-color:aqua;
+    height:65%;
+    width:35%;
+    margin-left:75px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+  body {
     background-image:url("../images/A4.png");
     background-size:cover;
     background-repeat:no-repeat;
@@ -12,19 +21,5 @@
     width:100%;
     margin:0;
     padding: 0;
-}
-.login_background{
-    background-color:aqua;
-    height:65%;
-    width:35%;
-    margin-left:75px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-    background-color: lightgreen;
   }
 }
