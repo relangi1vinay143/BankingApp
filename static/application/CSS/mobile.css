@@ -1,4 +1,4 @@
-body {
+.back_ground_image {
     background-image:url("/static/application/images/A4.png");
     background-size:cover;
     background-repeat:no-repeat;
