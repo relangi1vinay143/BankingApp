@@ -57,10 +57,9 @@ th.photo-col, td.photo-col {
 }
 @media (max-width: 768px) {
     .logout-btn {
-        position: fixed;
-        bottom: 20px;
+        position: fixed;      /* takes it out of the flex layout */
+        bottom: 20px;         /* stick to bottom */
+        right: 20px;          /* bottom-right (change to 50% + translateX if you want center) */
         top: auto;
-        right: 50%;
-        transform: translateX(50%);
     }
 }
