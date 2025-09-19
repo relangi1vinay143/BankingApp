@@ -13,10 +13,22 @@
 <body>
     <div class="Login_Page_Background">
         <div class="login_background">
+            
+            <!-- ✅ Show Django error messages -->
+            {% if messages %}
+              <div>
+                {% for message in messages %}
+                  <div class="alert alert-danger text-center" role="alert">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
             <form method="POST" action="{% url 'S2' %}">
                 {% csrf_token %}
-                <marquee behavior="" direction="">Please Enter Account Number (or) Aadhar Number..</marquee>
-                
+                <marquee>Please Enter Account Number (or) Aadhar Number..</marquee>
+
                 <div class="mb-3">
                     <label for="A1">Account Number</label>
                     <input type="number" name="account_number" id="A1" class="form-control" placeholder="Enter A/C Number..">
@@ -29,10 +41,10 @@
                     <input id="A2" type="number" name="aadhar_number" class="form-control" placeholder="Enter Aadhar Number..">
                 </div>
 
-                <div class="button-group">
-                    <input type="submit" value="Validate" class="btn btn-outline-primary">
-                    <input type="reset" value="RESET" class="btn btn-outline-info">
-                    <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a>
+                <div class="button-group d-flex justify-content-between">
+                    <input type="submit" value="Validate" class="btn btn-outline-primary w-100 mx-1">
+                    <input type="reset" value="RESET" class="btn btn-outline-info w-100 mx-1">
+                    <a href="{% url 'logout' %}" class="btn btn-outline-danger w-100 mx-1">Logout</a>
                 </div>
             </form>
         </div>
