@@ -95,7 +95,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files
 MEDIA_URL = "/media/"
-MEDIA_ROOT = MEDIA_DIR
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
