@@ -55,8 +55,7 @@ def Test_Case2(request):
             return redirect('S3')
 
         except Account.DoesNotExist:
-            messages.error(request, "Account not found. Please check the details and try again.")
-            return render(request, 'application/S2.html')
+            return render(request, 'application/S2.html',{'error': 'Please enter valid details'})
 
     return render(request, 'application/S2.html')
 

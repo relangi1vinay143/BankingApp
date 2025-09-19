@@ -32,6 +32,12 @@
                     <span id="AAD_ERR" style="color:red; font-size:12px;"></span>
                 </div>
 
+                {% if error_message %}
+                    <span style="color:red; font-size:13px; display:block; margin-top:10px;">
+                        {{ error_message }}
+                    </span>
+                {% endif %}
+
                 <div style="margin: 10px; text-align:center;">
                     <input type="submit" value="Validate" class="btn btn-outline-primary" style="width: 25%; margin: 5px;">
                     <input type="reset" value="RESET" class="btn btn-outline-info" style="width: 25%; margin: 5px;">
