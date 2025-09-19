@@ -61,3 +61,16 @@
     text-align: center;
     display: block;
 }
+.button-group {
+    display: flex;
+    gap: 10px;              /* space between buttons */
+    margin-top: 15px;
+}
+
+.button-group .btn,
+.button-group input[type="submit"],
+.button-group input[type="reset"] {
+    flex: 1;                /* all buttons same width */
+    text-align: center;
+    font-size: 14px;
+}
