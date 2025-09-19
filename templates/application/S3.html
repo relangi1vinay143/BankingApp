@@ -18,7 +18,7 @@
 <body>
     
     <!-- Logout button outside the table, fixed at top-right -->
-    <a href="{% url 'logout' %}" class="btn btn-danger logout-btn">Logout</a>
+    <a href="{% url 'logout' %}" class="btn btn-danger logout-btn desktop-only">Logout</a>
 
     <div class="Accounter_bg">
         <div>
@@ -39,6 +39,11 @@
                                 <img src="{% static 'application/images/no-photo.png' %}" alt="No Photo" class="photo">
                             {% endif %}
                         </td>
+                        <tr class="mobile-only">
+    <td colspan="3" style="text-align:center;">
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    </td>
+</tr>
                     </tr>
                     <tr><th>Account Number</th><th><span>{{ account.account_number }}</span></th></tr>
                     <tr><th>Account Type</th><th><span>{{ account.account_type }}</span></th></tr>
