@@ -1,69 +1,58 @@
 html, body {
     background-color: aqua;
     background-size: cover;
-    height: 100%;
+    min-height: 100vh;   /* full screen height */
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0;
+    padding: 10px;
+    display: block;
+    overflow-x: hidden;  /* prevent cutting */
 }
 
-.Accounter_bg {
-    background-color: bisque;
-    height: 120%;
-    width: 43%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border-radius: 20px;
-}
-
+/* Table styling */
 table {
     background: white;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-top:45px;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;   /* spacing from top */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
-    border-radius: 20px;
-}
-th, td {
-    padding: 10px 15px;
-    border: 1px solid #ccc;
+    overflow: hidden;
 }
 
-/* Fix the photo column width */
+th, td {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+}
+
+/* Fix the photo column */
 th.photo-col, td.photo-col {
-    width: 120px;      /* adjust as needed */
+    width: 120px;
     text-align: center;
     vertical-align: top;
 }
 
-/* Resize the image inside the photo column */
+/* Profile photo */
 .photo {
-    max-width: 100px;  /* prevent stretching */
+    max-width: 100px;
     max-height: 150px;
-    object-fit: cover; /* keeps aspect ratio */
-    border-radius: 8px; /* optional rounded corners */
-}
-/* Show desktop button, hide mobile version */
-.desktop-only {
-    display: inline-block;
-}
-.mobile-only {
-    display: none;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* On mobile, swap visibility */
+/* ✅ Responsive for mobile */
 @media (max-width: 768px) {
-    .desktop-only {
-        display: none !important;
+    table {
+        font-size: 13px;
     }
-    .mobile-only {
-        display: table-row !important;
+
+    th, td {
+        padding: 6px;
+    }
+
+    .photo {
+        max-width: 80px;
+        max-height: 120px;
     }
 }
