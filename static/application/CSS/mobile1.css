@@ -51,7 +51,6 @@
 
 /* Buttons – all same size */
 .login_background input[type="submit"],
-.login_background input[type="reset"],
 .login_background a.btn {
     width: 100%;             /* full width */
     padding: 10px;
@@ -61,16 +60,12 @@
     text-align: center;
     display: block;
 }
-.button-group {
-    display: flex;
-    gap: 10px;              /* space between buttons */
-    margin-top: 15px;
-}
-
-.button-group .btn,
-.button-group input[type="submit"],
-.button-group input[type="reset"] {
-    flex: 1;                /* all buttons same width */
+.reset{
+    width: 100%;             /* full width */
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 6px;
     text-align: center;
-    font-size: 14px;
+    display: block;
 }
