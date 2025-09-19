@@ -5,7 +5,7 @@ body {
     background-attachment:fixed;
     background-position:center;
     display: flex;
-    justify-content:start;
+    justify-content:center;
     align-items:center;
     height:100vh;
     width:100%;
@@ -14,10 +14,12 @@ body {
   }
   .login_background{
     background-color: azure;
-    height:65%;
-    width:35%;
-    margin-left:75px;
-    display:flex;
+    width: 90%;        /* take almost full width */
+    height: auto;      /* adjust height automatically */
+    margin: 10px;      /* equal margin all sides */
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;     /* spacing inside */
+    border-radius: 10px;
 }
